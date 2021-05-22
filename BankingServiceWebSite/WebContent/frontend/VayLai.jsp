@@ -37,7 +37,7 @@ String customerIDStr = request.getParameter("customerid");
 String cusName = request.getParameter("cusname");
 Users user = new Users();
 ToKhai tk = new ToKhai();
-ArrayList<Cmnd> cmnds = new ArrayList<Cmnd>();
+Cmnd cmnds = new Cmnd();
 String tkID = request.getParameter("tkid");
 ArrayList<HDVay> hdVay = new ArrayList<HDVay>();
 int tkid = Integer.parseInt(tkID);
@@ -68,6 +68,8 @@ if(customerIDStr != null && customerIDStr.length()>0){
 						<td>Họ tên</td>
 						<td>Email</td>
 						<td>CMND/CCCD</td>
+						<td>Nơi Cấp</td>
+						<td>Ngày cấp</td>
 						<td>Phone</td>
 						<td>Address</td>
 					</tr>
@@ -77,6 +79,8 @@ if(customerIDStr != null && customerIDStr.length()>0){
 						<td><%=user.getFullName()%></td>
 						<td><%=user.getEmail()%></td>
 						<td><%=user.getCccd()%></td>
+						<td><%=cmnds.getNoiCap() %></td>
+						<td><%=cmnds.getNgaycap() %></td>
 						<td><%=user.getPhone()%></td>
 						<td><%=user.getAddress()%></td>
 					</tr>
