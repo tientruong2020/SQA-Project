@@ -9,7 +9,7 @@
 		</div>
 		<div style='display: block'>
 			<a>Wellcome!! <%= username %></a>
-			<button onclick="location.href='index.jsp';">Đăng xuất</button>
+			<button onclick="location.href='../';">Đăng xuất</button>
 		</div>
 	</div>
 </div>

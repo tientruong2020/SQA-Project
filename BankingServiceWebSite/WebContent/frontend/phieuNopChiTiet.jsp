@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.banking.entity.hopDongVay"%>
+<%@page import="com.banking.entity.HopDongVay"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.banking.dao.HopDongVayDAO"%>
 <%@page import="com.banking.dao.ChiTietLaiVayDAO"%>
 <%@page import="com.banking.entity.Users"%>
-<%@page import="com.banking.entity.chitietLaiVay"%>
+<%@page import="com.banking.entity.ChiTietLaiVay"%>
 <%@page import="com.banking.dao.UsersDAO"%>
 <%@page import="java.util.*"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -64,7 +64,7 @@ button:hover {
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <%
-	if(request.getParameter("hdvid") != null 
+if(request.getParameter("hdvid") != null 
 		&& request.getParameter("userid") != null 
 		&& request.getParameter("cusname") != null 
 		&& request.getParameter("beforedate") != null
@@ -72,44 +72,44 @@ button:hover {
 		&& request.getParameter("timeid") != null
 	){
 		try{
-			int hdvid = Integer.parseInt(request.getParameter("hdvid"));
-			int userid = Integer.parseInt(request.getParameter("userid"));
-			String cusName = request.getParameter("cusname").toString();
-			int timeid = Integer.parseInt(request.getParameter("timeid"));
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-			Calendar calender1 = Calendar.getInstance();
-			Calendar calender2 = Calendar.getInstance();
-			calender1.setTime(formatter.parse(request.getParameter("beforedate").toString()));
-			calender2.setTime(formatter.parse(request.getParameter("afterdate").toString()));
-			
-			String beforeDate = formatter.format(calender1.getTime());
-			String afterDate = formatter.format(calender2.getTime());
-			
-			UsersDAO userDAO = new UsersDAO();
-			ArrayList<Users> listUser = userDAO.getInfoUser(hdvid);
-			ChiTietLaiVayDAO ctlvDAO = new ChiTietLaiVayDAO();
-			ArrayList<chitietLaiVay> listLV = ctlvDAO.getCTLVByID(hdvid);
-			
-			HopDongVayDAO hopDongVayDAO = new HopDongVayDAO();
-			if(hopDongVayDAO.checkHD(hdvid)){
-				hopDongVay hdv = hopDongVayDAO.getByID(hdvid);
-				String tenGoiVay = hdv.getGoiVay().getTenGoi();
-				String thoiGian = hdv.getKiHan();
-				String kiHan = thoiGian.substring(0,2);
-				int kiHanTG = Integer.parseInt(kiHan.trim());
-				String lvduno = "lai suat du no";
-				String lvcodinh = "lai suat co dinh";
-				float goc = 0;
-				float lai = 0;
-				if((tenGoiVay.trim()).equalsIgnoreCase(lvcodinh)) { 
-					//lai vay co dinh
-					goc = 0;
-					lai = hdv.getTienVay()* (hdv.getGoiVay().getLaiSuat()/kiHanTG);
-				} else {
-					//lai vay du no
-					goc = hdv.getTienVay()/kiHanTG;
-					lai = (hdv.getTienVay() - ((hdv.getTienVay()/kiHanTG)*(timeid-1))) * hdv.getGoiVay().getLaiSuat();
-				}
+	int hdvid = Integer.parseInt(request.getParameter("hdvid"));
+	int userid = Integer.parseInt(request.getParameter("userid"));
+	String cusName = request.getParameter("cusname").toString();
+	int timeid = Integer.parseInt(request.getParameter("timeid"));
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+	Calendar calender1 = Calendar.getInstance();
+	Calendar calender2 = Calendar.getInstance();
+	calender1.setTime(formatter.parse(request.getParameter("beforedate").toString()));
+	calender2.setTime(formatter.parse(request.getParameter("afterdate").toString()));
+	
+	String beforeDate = formatter.format(calender1.getTime());
+	String afterDate = formatter.format(calender2.getTime());
+	
+	UsersDAO userDAO = new UsersDAO();
+	ArrayList<Users> listUser = userDAO.getInfoUser(hdvid);
+	ChiTietLaiVayDAO ctlvDAO = new ChiTietLaiVayDAO();
+	ArrayList<ChiTietLaiVay> listLV = ctlvDAO.getCTLVByID(hdvid);
+	
+	HopDongVayDAO hopDongVayDAO = new HopDongVayDAO();
+	if(hopDongVayDAO.checkHD(hdvid)){
+		HopDongVay hdv = hopDongVayDAO.getByID(hdvid);
+		String tenGoiVay = hdv.getGoiVay().getTenGoi();
+		String thoiGian = hdv.getKiHan();
+		String kiHan = thoiGian.substring(0,2);
+		int kiHanTG = Integer.parseInt(kiHan.trim());
+		String lvduno = "lai suat du no";
+		String lvcodinh = "lai suat co dinh";
+		float goc = 0;
+		float lai = 0;
+		if((tenGoiVay.trim()).equalsIgnoreCase(lvcodinh)) { 
+	//lai vay co dinh
+	goc = 0;
+	lai = hdv.getTienVay()* (hdv.getGoiVay().getLaiSuat()/kiHanTG);
+		} else {
+	//lai vay du no
+	goc = hdv.getTienVay()/kiHanTG;
+	lai = (hdv.getTienVay() - ((hdv.getTienVay()/kiHanTG)*(timeid-1))) * hdv.getGoiVay().getLaiSuat();
+		}
 %>
 	<div style='margin-top: 20px'>
 		<a href="themPhieuNop.jsp?hdvid=<%=hdvid%>&userid=<%=userid%>&cusname=<%=cusName%>"><button>Quay lại</button></a>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@page import="com.banking.entity.hopDongVay"%>
+<%@page import="com.banking.entity.HopDongVay"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.banking.dao.HopDongVayDAO"%>
 <%@page import="com.banking.dao.UsersDAO"%>
@@ -57,26 +57,29 @@ button:hover {
 </head>
 
 <%
-	if(request.getParameter("userid") != null && request.getParameter("cusname") != null){
+if(request.getParameter("userid") != null && request.getParameter("cusname") != null){
 		try{
-			int userid = Integer.parseInt(request.getParameter("userid"));
-			String cusName = request.getParameter("cusname").toString();
-			HopDongVayDAO hopDongVayDAO = new HopDongVayDAO();
-			ArrayList<hopDongVay> listHD = hopDongVayDAO.getHDVByUser(userid);
-			UsersDAO userDAO = new UsersDAO();
-			ArrayList<Users> listUser = userDAO.getInfoUser(userid);
+	int userid = Integer.parseInt(request.getParameter("userid"));
+	String cusName = request.getParameter("cusname").toString();
+	HopDongVayDAO hopDongVayDAO = new HopDongVayDAO();
+	ArrayList<HopDongVay> listHD = hopDongVayDAO.getHDVByUser(userid);
+	UsersDAO userDAO = new UsersDAO();
+	ArrayList<Users> listUser = userDAO.getInfoUser(userid);
 %>
 
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-	<% if(listHD.size() != 0){ %>
+	<%
+	if(listHD.size() != 0){
+	%>
 	
 	<div style='margin-top: 20px'>
 		<button onclick="location.href='userInfo.jsp?name=<%=cusName%>';">Quay lại</button>
 	</div>
 	
 	<h1>Thông tin khách hàng và gói vay</h1>
-<% 	if(listUser.size() != 0){
+<%
+if(listUser.size() != 0){
 		Users u = listUser.get(0);
 %>
 	<table>
@@ -85,27 +88,29 @@ button:hover {
 		<tbody>
 			<tr>
 				<td>Họ và tên: </td>
-				<td><%=u.getFullName() %></td>
+				<td><%=u.getFullName()%></td>
 			</tr>
 			<tr>
 				<td>Số CCCD: </td>
-				<td><%=u.getCccd() %></td>
+				<td><%=u.getCccd()%></td>
 			</tr>
 			<tr>
 				<td>Số điện thoại: </td>
-				<td>0<%=u.getPhone() %></td>
+				<td>0<%=u.getPhone()%></td>
 			</tr>
 			<tr>
 				<td>Email: </td>
-				<td><%=u.getEmail() %></td>
+				<td><%=u.getEmail()%></td>
 			</tr>
 			<tr>
 				<td>Địa chỉ: </td>
-				<td><%=u.getAddress() %></td>
+				<td><%=u.getAddress()%></td>
 			</tr>
 		</tbody>
 	</table>
-<%} %>
+<%
+}
+%>
 	
 	<h2>Hợp đồng vay</h2>
 	<table style="width: 60%">
@@ -122,8 +127,9 @@ button:hover {
 			</tr>
 		</thead>
 		<tbody>
-			<%for (int i =0 ;i<listHD.size();i++){ 
-				hopDongVay hdv = listHD.get(i);
+			<%
+			for (int i =0 ;i<listHD.size();i++){ 
+					HopDongVay hdv = listHD.get(i);
 			%>
 			<tr>
 				<td style="text-align: center"><%=hdv.getID() %></td>

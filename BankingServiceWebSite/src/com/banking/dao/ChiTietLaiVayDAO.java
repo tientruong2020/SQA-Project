@@ -5,25 +5,25 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.banking.entity.chitietLaiVay;
+import com.banking.entity.ChiTietLaiVay;
 
-public class ChiTietLaiVayDAO extends DAO{
-	
+public class ChiTietLaiVayDAO extends DAO {
+
 	public ChiTietLaiVayDAO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<chitietLaiVay> getCTLVByID(int id){
-		ArrayList<chitietLaiVay> kq = new ArrayList<chitietLaiVay>();
+	public ArrayList<ChiTietLaiVay> getCTLVByID(int id) {
+		ArrayList<ChiTietLaiVay> kq = new ArrayList<ChiTietLaiVay>();
 		String sql = "SELECT * FROM goivay AS gv INNER JOIN loaigoivay AS lgv INNER JOIN hopdongvay AS hdv where hdv.ID = ? "
 				+ "AND gv.ID = hdv.goivayID AND lgv.ID = gv.loaigoivayID";
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
-				chitietLaiVay ctlv = new chitietLaiVay();
+			while (rs.next()) {
+				ChiTietLaiVay ctlv = new ChiTietLaiVay();
 				ctlv.setTenGoi(rs.getString("tengoi"));
 				ctlv.setLoaiGoi(rs.getString("ten"));
 				ctlv.setNgayVay(rs.getDate("ngayvay"));

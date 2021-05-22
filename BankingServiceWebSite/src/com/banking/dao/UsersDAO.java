@@ -19,7 +19,7 @@ public class UsersDAO extends DAO{
 		String sql = "SELECT * from USER where hoten like ? AND `Role` like 'customer'";
 		try {
 			PreparedStatement ps = connection.prepareStatement(sql);
-			ps.setString(1,name);
+			ps.setString(1,"%"+name+"%");
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				Users u = new Users();

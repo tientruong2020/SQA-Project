@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <%@page import="com.banking.entity.Users"%>
-<%@page import="com.banking.entity.chitietLaiVay"%>
+<%@page import="com.banking.entity.ChiTietLaiVay"%>
 <%@page import="com.banking.dao.UsersDAO"%>
-<%@page import="com.banking.entity.hopDongVay"%>
+<%@page import="com.banking.entity.HopDongVay"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.banking.dao.HopDongVayDAO"%>
 <%@page import="com.banking.dao.ChiTietLaiVayDAO"%>
 <%@page import="com.banking.dao.PhieuNopTienDAO"%>
-<%@page import="com.banking.entity.phieunoptien"%>
+<%@page import="com.banking.entity.PhieuNopTien"%>
 <%@page import="java.util.*"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <html>
@@ -74,18 +74,18 @@ button:hover {
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<%	
-	if(request.getParameter("hdvid") != null && request.getParameter("userid") != null && request.getParameter("cusname") != null){
+<%
+if(request.getParameter("hdvid") != null && request.getParameter("userid") != null && request.getParameter("cusname") != null){
 		try{
-			int hdvid = Integer.parseInt(request.getParameter("hdvid"));
-			int userid = Integer.parseInt(request.getParameter("userid"));
-			String cusName = request.getParameter("cusname").toString();
-			UsersDAO userDAO = new UsersDAO();
-			ArrayList<Users> listUser = userDAO.getInfoUser(hdvid);
-			ChiTietLaiVayDAO ctlvDAO = new ChiTietLaiVayDAO();
-			ArrayList<chitietLaiVay> listLV = ctlvDAO.getCTLVByID(hdvid);
-			PhieuNopTienDAO pntDAO = new PhieuNopTienDAO();
-			ArrayList<phieunoptien> listPNT = pntDAO.getPntByHdvID(hdvid);
+	int hdvid = Integer.parseInt(request.getParameter("hdvid"));
+	int userid = Integer.parseInt(request.getParameter("userid"));
+	String cusName = request.getParameter("cusname").toString();
+	UsersDAO userDAO = new UsersDAO();
+	ArrayList<Users> listUser = userDAO.getInfoUser(hdvid);
+	ChiTietLaiVayDAO ctlvDAO = new ChiTietLaiVayDAO();
+	ArrayList<ChiTietLaiVay> listLV = ctlvDAO.getCTLVByID(hdvid);
+	PhieuNopTienDAO pntDAO = new PhieuNopTienDAO();
+	ArrayList<PhieuNopTien> listPNT = pntDAO.getPntByHdvID(hdvid);
 %>
 	<div style='margin-top: 20px'>
 		<a href="chonKhoanVay.jsp?userid=<%=userid%>&cusname=<%=cusName%>"><button>Quay lại</button></a>
@@ -95,34 +95,39 @@ button:hover {
 	<div class="table1">
 	<table >
 		<tbody>
-<% 
-
-if(listUser.size() != 0){ %>
-	<%for (int i = 0 ; i < listUser.size(); i++) {
+<%
+if(listUser.size() != 0){
+%>
+	<%
+	for (int i = 0 ; i < listUser.size(); i++) {
 		Users u = listUser.get(i);
 	%>
 			<tr>
 				<td>Họ và tên: </td>
-				<td><%=u.getFullName() %></td>
+				<td><%=u.getFullName()%></td>
 			</tr>
 			<tr>
 				<td>Số CCCD: </td>
-				<td><%=u.getCccd() %></td>
+				<td><%=u.getCccd()%></td>
 			</tr>
 			<tr>
 				<td>Số điện thoại: </td>
-				<td><%=u.getPhone() %></td>
+				<td><%=u.getPhone()%></td>
 			</tr>
 			<tr>
 				<td>Email: </td>
-				<td><%=u.getEmail() %></td>
+				<td><%=u.getEmail()%></td>
 			</tr>
 			<tr>
 				<td>Địa chỉ: </td>
-				<td><%=u.getAddress() %></td>
+				<td><%=u.getAddress()%></td>
 			</tr>
-	<%} %>
-<%} %>
+	<%
+	}
+	%>
+<%
+}
+%>
 		</tbody>
 	</table>
 </div>
@@ -130,17 +135,20 @@ if(listUser.size() != 0){ %>
 <div class="table2">
 	<table >
 		<tbody>
-<% if(listLV.size() != 0){ %>
-	<%for (int i = 0 ; i < listLV.size(); i++) {
-		chitietLaiVay u = listLV.get(i);
+<%
+if(listLV.size() != 0){
+%>
+	<%
+	for (int i = 0 ; i < listLV.size(); i++) {
+		ChiTietLaiVay u = listLV.get(i);
 	%>
 			<tr>
 				<td>Kiểu vay: </td>
-				<td><%=u.getTenGoi() %></td>
+				<td><%=u.getTenGoi()%></td>
 			</tr>
 			<tr>
 				<td>Ngày vay: </td>
-				<td><%=u.getNgayVay() %></td>
+				<td><%=u.getNgayVay()%></td>
 			</tr>
 			<tr>
 				<td>Kỳ hạn: </td>
@@ -148,24 +156,28 @@ if(listUser.size() != 0){ %>
 			</tr>
 			<tr>
 				<td>Lãi suất: </td>
-				<td><%=u.getLaiSuat() %></td>
+				<td><%=u.getLaiSuat()%></td>
 			</tr>
 			<tr>
 				<td>Tiền vay: </td>
-				<td><%=u.getTienVay() %></td>
+				<td><%=u.getTienVay()%></td>
 			</tr>
-	<%} %>
-<%} %>
+	<%
+	}
+	%>
+<%
+}
+%>
 		</tbody>
 	</table>
 	</div>
 </div>
 
 <%
-chitietLaiVay dsLV = listLV.get(0);
+ChiTietLaiVay dsLV = listLV.get(0);
 String lvduno = "lai suat du no";
 String lvcodinh = "lai suat co dinh";
-if((dsLV.getTenGoi().trim()).equalsIgnoreCase(lvcodinh)) { 
+if((dsLV.getTenGoi().trim()).equalsIgnoreCase(lvcodinh)) {
 %>	
 	<table>
 		<thead>
@@ -177,11 +189,13 @@ if((dsLV.getTenGoi().trim()).equalsIgnoreCase(lvcodinh)) {
 			</tr>
 		</thead>
 		<tbody>
-<% if(listLV.size() != 0){ 
+<%
+if(listLV.size() != 0){ 
 	float laiVayCoDinh = 0;
 %>
-	<%for (int i = 0 ; i < listLV.size(); i++) {
-		chitietLaiVay u = listLV.get(i);
+	<%
+	for (int i = 0 ; i < listLV.size(); i++) {
+		ChiTietLaiVay u = listLV.get(i);
 		String thoiGian = u.getKiHan();
 		String kiHan = thoiGian.substring(0,2);
 		int kiHanTG = Integer.parseInt(kiHan.trim());
@@ -191,43 +205,58 @@ if((dsLV.getTenGoi().trim()).equalsIgnoreCase(lvcodinh)) {
 		for(int j = 0; j < kiHanTG; j++) {
 			String beforeDate = formatter.format(calender.getTime());
 			calender.add(Calendar.MONTH, 1);
-	        String afterDate = formatter.format(calender.getTime());
+			        String afterDate = formatter.format(calender.getTime());
 	%>
 			<tr>
 				<td><%=j+1%></td>
-				<td>[<%=beforeDate %>] - [<%=afterDate %>]</td>
-				<td><%=u.getTienVay() * (u.getLaiSuat()/kiHanTG) %> VND</td>
-					<%laiVayCoDinh += (u.getTienVay() * (u.getLaiSuat()/kiHanTG)); %>
+				<td>[<%=beforeDate%>] - [<%=afterDate%>]</td>
+				<td><%=u.getTienVay() * (u.getLaiSuat()/kiHanTG)%> VND</td>
+					<%
+					laiVayCoDinh += (u.getTienVay() * (u.getLaiSuat()/kiHanTG));
+					%>
 				<%
-					Boolean datra = true;
-					if(listPNT.size() > 0){
-						for(int k = 0; k < listPNT.size(); k++){
-							phieunoptien pnt = listPNT.get(k);
-							if(pnt.getTimeID().equals(j+1)){
-								datra = false;
-							}
-						}
-					}
+				Boolean datra = true;
+									if(listPNT.size() > 0){
+										for(int k = 0; k < listPNT.size(); k++){
+											PhieuNopTien pnt = listPNT.get(k);
+											if(pnt.getTimeID().equals(j+1)){
+												datra = false;
+											}
+										}
+									}
 				%>
-				<%if(datra == false) { %>
+				<%
+				if(datra == false) {
+				%>
 					<td style="text-align: center">Đã trả</td>
-				<%} else { %>
+				<%
+				} else {
+				%>
 					<td></td>
-				<%} %>
+				<%
+				}
+				%>
 			</tr>
-		<%} %>
+		<%
+		}
+		%>
 		</tbody>
 	</table>
 	<br>
 	<br>
 	
-	<h3>* Tổng lãi vay chi trả: <%=laiVayCoDinh %> VND</h3>
+	<h3>* Tổng lãi vay chi trả: <%=laiVayCoDinh%> VND</h3>
 	<h3>* Tiền gốc phải chi trả: <%=u.getTienVay()%> VND</h3>
 	<h3>=> Tổng tiền gốc và lãi chi trả: <%=u.getTienVay() + laiVayCoDinh%> VND</h3>
-	<%} %>
-<%} %>	
-<%} else {
-%>
+	<%
+	}
+	%>
+<%
+}
+%>	
+<%
+	} else {
+	%>
 	<table>
 		<thead>
 			<tr>
@@ -239,11 +268,13 @@ if((dsLV.getTenGoi().trim()).equalsIgnoreCase(lvcodinh)) {
 			</tr>
 		</thead>
 		<tbody>
-<% if(listLV.size() != 0){ 
+<%
+if(listLV.size() != 0){ 
 	float laiVayDuNo = 0;
 %>
-	<%for (int i = 0 ; i < listLV.size(); i++) {
-		chitietLaiVay u = listLV.get(i);
+	<%
+	for (int i = 0 ; i < listLV.size(); i++) {
+		ChiTietLaiVay u = listLV.get(i);
 		String thoiGian = u.getKiHan();
 		String kiHan = thoiGian.substring(0,2);
 		int kiHanTG = Integer.parseInt(kiHan.trim());
@@ -253,24 +284,26 @@ if((dsLV.getTenGoi().trim()).equalsIgnoreCase(lvcodinh)) {
 		for(int j = 0; j < kiHanTG; j++) {
 			String beforeDate = formatter.format(calender.getTime());
 			calender.add(Calendar.MONTH, 1);
-	        String afterDate = formatter.format(calender.getTime());
+			        String afterDate = formatter.format(calender.getTime());
 	%>
 			<tr>
 				<td><%=j+1%></td>
-				<td>[<%=beforeDate %>] - [<%=afterDate %>]</td>
-				<td><%=(u.getTienVay() - ((u.getTienVay()/kiHanTG)*j)) * u.getLaiSuat() %> VND</td>
-				<%laiVayDuNo += (u.getTienVay() - ((u.getTienVay()/kiHanTG)*j)) * u.getLaiSuat(); %>
-				<td><%=u.getTienVay()/kiHanTG %> VND</td>
+				<td>[<%=beforeDate%>] - [<%=afterDate%>]</td>
+				<td><%=(u.getTienVay() - ((u.getTienVay()/kiHanTG)*j)) * u.getLaiSuat()%> VND</td>
 				<%
-					Boolean datra = true;
-					if(listPNT.size() > 0){
-						for(int k = 0; k < listPNT.size(); k++){
-							phieunoptien pnt = listPNT.get(k);
-							if(pnt.getTimeID().equals(j+1)){
-								datra = false;
+				laiVayDuNo += (u.getTienVay() - ((u.getTienVay()/kiHanTG)*j)) * u.getLaiSuat();
+				%>
+				<td><%=u.getTienVay()/kiHanTG%> VND</td>
+				<%
+				Boolean datra = true;
+							if(listPNT.size() > 0){
+								for(int k = 0; k < listPNT.size(); k++){
+									PhieuNopTien pnt = listPNT.get(k);
+									if(pnt.getTimeID().equals(j+1)){
+										datra = false;
+									}
+								}
 							}
-						}
-					}
 				%>
 				<%if(datra == false) { %>
 					<td style="text-align: center">Đã trả</td>

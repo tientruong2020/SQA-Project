@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 import com.banking.dao.ChiTietLaiVayDAO;
-import com.banking.entity.chitietLaiVay;
+import com.banking.entity.ChiTietLaiVay;
 
 class TestGetCTLVByID {
 
@@ -16,8 +16,8 @@ class TestGetCTLVByID {
 	void test_HaveThongTin_1() throws ClassNotFoundException, SQLException {
 		int[] testHdvID = {10,14};
 		
-		ArrayList<chitietLaiVay> ctlvTest = new ArrayList<chitietLaiVay>();
-		ArrayList<chitietLaiVay> ctlvDB = new ArrayList<chitietLaiVay>();
+		ArrayList<ChiTietLaiVay> ctlvTest = new ArrayList<ChiTietLaiVay>();
+		ArrayList<ChiTietLaiVay> ctlvDB = new ArrayList<ChiTietLaiVay>();
 		
 		String[] tengoi = {"lai suat du no", "lai suat du no"};
 		String[] loaigoi = {"vay tin chap", "vay tin chap"};
@@ -27,7 +27,7 @@ class TestGetCTLVByID {
 		
 		ChiTietLaiVayDAO ctlvDAO = new ChiTietLaiVayDAO();
 		for(int i = 0; i < testHdvID.length; i++) {
-			chitietLaiVay ctlv = new chitietLaiVay();
+			ChiTietLaiVay ctlv = new ChiTietLaiVay();
 			ctlv.setTenGoi(tengoi[i]);
 			ctlv.setLoaiGoi(loaigoi[i]);
 			ctlv.setTienVay(tienvay[i]);
@@ -52,8 +52,8 @@ class TestGetCTLVByID {
 	void test_HaveThongTin_2() throws ClassNotFoundException, SQLException {
 		int[] testHdvID = {22,23};
 		
-		ArrayList<chitietLaiVay> ctlvTest = new ArrayList<chitietLaiVay>();
-		ArrayList<chitietLaiVay> ctlvDB = new ArrayList<chitietLaiVay>();
+		ArrayList<ChiTietLaiVay> ctlvTest = new ArrayList<ChiTietLaiVay>();
+		ArrayList<ChiTietLaiVay> ctlvDB = new ArrayList<ChiTietLaiVay>();
 		
 		String[] tengoi = {"lai suat du no", "lai suat co dinh"};
 		String[] loaigoi = {"vay tin chap", "vay tin chap"};
@@ -63,7 +63,7 @@ class TestGetCTLVByID {
 		
 		ChiTietLaiVayDAO ctlvDAO = new ChiTietLaiVayDAO();
 		for(int i = 0; i < testHdvID.length; i++) {
-			chitietLaiVay ctlv = new chitietLaiVay();
+			ChiTietLaiVay ctlv = new ChiTietLaiVay();
 			ctlv.setTenGoi(tengoi[i]);
 			ctlv.setLoaiGoi(loaigoi[i]);
 			ctlv.setTienVay(tienvay[i]);
@@ -88,8 +88,8 @@ class TestGetCTLVByID {
 	void test_HaveThongTin_3() throws ClassNotFoundException, SQLException {
 		int[] testHdvID = {26,27};
 		
-		ArrayList<chitietLaiVay> ctlvTest = new ArrayList<chitietLaiVay>();
-		ArrayList<chitietLaiVay> ctlvDB = new ArrayList<chitietLaiVay>();
+		ArrayList<ChiTietLaiVay> ctlvTest = new ArrayList<ChiTietLaiVay>();
+		ArrayList<ChiTietLaiVay> ctlvDB = new ArrayList<ChiTietLaiVay>();
 		
 		String[] tengoi = {"lai suat co dinh", "lai suat co dinh"};
 		String[] loaigoi = {"vay tin chap", "vay tin chap"};
@@ -99,7 +99,7 @@ class TestGetCTLVByID {
 		
 		ChiTietLaiVayDAO ctlvDAO = new ChiTietLaiVayDAO();
 		for(int i = 0; i < testHdvID.length; i++) {
-			chitietLaiVay ctlv = new chitietLaiVay();
+			ChiTietLaiVay ctlv = new ChiTietLaiVay();
 			ctlv.setTenGoi(tengoi[i]);
 			ctlv.setLoaiGoi(loaigoi[i]);
 			ctlv.setTienVay(tienvay[i]);
@@ -124,7 +124,7 @@ class TestGetCTLVByID {
 	void test_NotHaveThongTin() throws ClassNotFoundException, SQLException {
 		int[] testHdvID = {30,32};
 		
-		ArrayList<chitietLaiVay> ctlvDB = new ArrayList<chitietLaiVay>();
+		ArrayList<ChiTietLaiVay> ctlvDB = new ArrayList<ChiTietLaiVay>();
 	
 		
 		ChiTietLaiVayDAO ctlvDAO = new ChiTietLaiVayDAO();
