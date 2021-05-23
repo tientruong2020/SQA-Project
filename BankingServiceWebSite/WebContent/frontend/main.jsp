@@ -53,7 +53,7 @@ button:hover {
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div align="center" style='margin-top: 50px'>
-		<h2><a href="searchUser.jsp"><button>Vay lãi</button></a></h2>
+		<h2><a href="xemHD.jsp"><button>Vay lãi</button></a></h2>
 		<h2><a href="searchUser.jsp"><button>Trả tiền</button></a></h2>
 		<h2><a href="searchUser.jsp"><button>Tính lãi</button></a></h2>
 	</div>

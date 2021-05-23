@@ -26,8 +26,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="D:/Local_ThinhMD/Download030521/javax.servlet-3.0.jar"/>
-	<classpathentry kind="lib" path="D:/Local_ThinhMD/Download030521/servlet.jar"/>
-	<classpathentry kind="lib" path="D:/Local_ThinhMD/GocHocTap/Ki_II_Nam_4/KTTKPM/mysql-connector-java-8.0.19.jar"/>
+	<classpathentry kind="lib" path="E:/Hoc Online/Software Quality Assurance/SQA/BankingServiceWebSite/WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-1.2.4.jar"/>
+	<classpathentry kind="lib" path="E:/Hoc Online/Software Quality Assurance/SQA/BankingServiceWebSite/WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-api-1.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/Hoc Online/Software Quality Assurance/SQA/BankingServiceWebSite/WebContent/WEB-INF/lib/mysql-connector-java-8.0.16.jar"/>
+	<classpathentry kind="lib" path="E:/Hoc Online/Software Quality Assurance/servlet.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
