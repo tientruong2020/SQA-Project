@@ -7,6 +7,13 @@
 <!DOCTYPE html>
 <html>
 <style>
+table, th, td {
+	  border: 1px solid black;
+	  padding: 5px;
+	}
+	table {
+	  border-spacing: 3px;
+	}
 body {
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -139,7 +146,7 @@ button:hover {
 			</table>
 			<p>Nhập đầy đủ các thông tin bên dưới:</p>
 			<hr>
-			<input type="hidden" name="customerid" value="<%=customerIDStr%>">
+			<input type="hidden" name="customerid" value="<%=customerIDStr%>" required>
 			<label for="Nghenghiep"><b>Nghề nghiệp </b><a
 				style="color: red;">(*)</a></label> <input type="text" name="Nghenghiep"
 				id="Nghenghiep" required> <label for="Nghenghiep"><b>Chức
@@ -152,7 +159,7 @@ button:hover {
 				id="Diachicongty" required>
 			<div>
 				<label for="psw-repeat"><b>Mức thu nhập </b><a
-					style="color: red;">(*)</a></label> <input type="radio" name="Mucluong"
+					style="color: red;">(*)</a></label> <input required type="radio" name="Mucluong"
 					value="1 Trieu den 5 trieu"> <label for="Mucluong">1
 					triệu - 5 triệu</label> <input type="radio" name="Mucluong"
 					value="tu 5 den 10 trieu "> <label for="Mucluong">từ
@@ -165,7 +172,7 @@ button:hover {
 			<br>
 			<div>
 				<label for="psw-repeat"><b>Mức chi tiêu hằng tháng </b><a
-					style="color: red;">(*)</a></label> <input type="radio"
+					style="color: red;">(*)</a></label> <input required type="radio"
 					name="Chitieuhangthang" value="1 trieu den 5 trieu"> <label
 					for="Chitieuhangthang">1 triệu - 5 triệu</label> <input
 					type="radio" name="Chitieuhangthang" value="tu 5 den 10 trieu">

@@ -3,4 +3,5 @@ encoding//WebContent/frontend/failed.jsp=UTF-8
 encoding//WebContent/frontend/index.jsp=UTF-8
 encoding//WebContent/frontend/searchUser.jsp=UTF-8
 encoding//WebContent/frontend/success.jsp=UTF-8
+encoding//src/test/selenium/TestSendMail.java=UTF-8
 encoding//test/com/banking/test/UserDAO/addUser.java=UTF-8

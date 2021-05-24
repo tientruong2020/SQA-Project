@@ -74,7 +74,7 @@ button:hover {
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div style='margin-top: 20px'>
-		<a href="searchUser.jsp"><button>Quay lại</button></a>
+		<a href="searchUserForKhaiBao.jsp"><button>Quay lại</button></a>
 	</div>
 	<h2>Danh sách khách hàng</h2>
 	
@@ -96,7 +96,8 @@ button:hover {
 					<td style="text-align: center"><%=i+1 %></td>
 					<td><%=u.getFullName() %></td>
 					<td><%=u.getEmail() %></td>
-					<td><button onclick="location.href='chonKhoanVay.jsp?userid=<%=u.getUserId()%>&cusname=<%=name%>';">Xem các khoản vay</button></td>
+					
+					<td><a href="DSKhaiBao.jsp?customerid=<%=u.getUserId()%>&cusname=<%=name%>"><button>Chọn</button></a></td>
 				</tr>
 			<%} %>
 		</tbody>

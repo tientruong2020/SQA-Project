@@ -21,6 +21,12 @@ input.specific:hover {
 }
 </style>
 </head>
+<%	if(request.getParameter("mess") !=null && request.getParameter("mess").equalsIgnoreCase("fail")){
+          %><script>
+          	window.alert("Sai Username hoặc Mật khẩu vui lòng đăng nhập lại!!!");
+          </script><%
+      } 
+      %>
 <body>
 		<div align="center">
 				<h2>Vui lòng đăng nhập:</h2>
