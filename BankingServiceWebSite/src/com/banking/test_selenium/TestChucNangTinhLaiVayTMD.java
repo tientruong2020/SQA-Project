@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TestTitleDangNhap extends TestDriver {
+public class TestChucNangTinhLaiVayTMD extends TestDriver {
 
 	ChromeDriver driver = getDriver();
 	@Test
