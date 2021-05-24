@@ -52,10 +52,12 @@ button:hover {
 	<div style='margin-top: 20px'>
 		<a href="main.jsp"><button>Quay lại</button></a>
 	</div>
-	
+	<div style='margin-top: 20px'>
+		<a href="addCustomer.jsp"><button>Thêm khách hàng</button></a>
+	</div>
 	<h2>Tìm kiếm khách hàng</h2>
 	<table>
-		<form action="userInfo.jsp" method="POST" >
+		<form action="userInfoForKhaiBao.jsp" method="POST" >
 			<tr>
 				<td style="padding: 15px">Nhập tên khách hàng:</td>
 				<td style="padding: 15px"><input type="text" required id ="name" name ="name"  autofocus/> <a style="color: red;">(*)</a></td>

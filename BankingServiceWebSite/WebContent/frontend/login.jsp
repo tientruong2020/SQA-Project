@@ -22,6 +22,12 @@ input.specific:hover {
 </style>
 </head>
 <body>
+<%	if(request.getParameter("mess") !=null && request.getParameter("mess").equalsIgnoreCase("fail")){
+          %><script>
+          	window.alert("Username hoặc Password không chính xác");
+          </script><%
+      } 
+      %>
 		<div align="center">
 				<h2>Vui lòng đăng nhập:</h2>
 				<form name="dangnhap" action="doLogin.jsp" method="post">

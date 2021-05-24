@@ -152,7 +152,7 @@ button:hover {
 				id="Diachicongty" required>
 			<div>
 				<label for="psw-repeat"><b>Mức thu nhập </b><a
-					style="color: red;">(*)</a></label> <input type="radio" name="Mucluong"
+					style="color: red;">(*)</a></label> <input required type="radio" name="Mucluong"
 					value="1 Trieu den 5 trieu"> <label for="Mucluong">1
 					triệu - 5 triệu</label> <input type="radio" name="Mucluong"
 					value="tu 5 den 10 trieu "> <label for="Mucluong">từ
@@ -165,7 +165,7 @@ button:hover {
 			<br>
 			<div>
 				<label for="psw-repeat"><b>Mức chi tiêu hằng tháng </b><a
-					style="color: red;">(*)</a></label> <input type="radio"
+					style="color: red;">(*)</a></label> <input required type="radio"
 					name="Chitieuhangthang" value="1 trieu den 5 trieu"> <label
 					for="Chitieuhangthang">1 triệu - 5 triệu</label> <input
 					type="radio" name="Chitieuhangthang" value="tu 5 den 10 trieu">
