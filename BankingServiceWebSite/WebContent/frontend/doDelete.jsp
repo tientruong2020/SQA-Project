@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 
 <%
-String id = request.getParameter("id");
+int id = Integer.parseInt(request.getParameter("id"));
 
           HDVaydao dao = new HDVaydao();
           dao.xoa(id);

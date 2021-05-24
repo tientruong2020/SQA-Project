@@ -118,7 +118,7 @@ if(customerIDStr != null && customerIDStr.length()>0){
         <form name="them" action="doAddHD.jsp" method="post">
             <table>
                 <tr>
-                    <td>Gói Vay</td>
+                    <td>Gói Vay<a style="color: red;">(*)</a></td>
                     <td>
                         <input type="radio" name="goivay" value="1" required>Lãi suất dư nợ
                         <input type="radio" name="goivay" value="2">Lãi suất cố định
@@ -126,19 +126,19 @@ if(customerIDStr != null && customerIDStr.length()>0){
                     </td>
                 </tr>
                 <tr>
-                    <td>User ID</td>
+                    <td>User ID<a style="color: red;">(*)</a></td>
                     <td>
                         <input type="text" name="userID" value="<%=customerIDStr%>" style="background-color: grey;" readonly>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <label for="ngayvay">Ngày Vay: </label>
+                    <label for="ngayvay">Ngày Vay: <a style="color: red;">(*)</a></label>
                     <input type="date" id="ngayvay" name="ngayvay" required>
                     
                 </tr>
                 <tr>
-                <td>Kì Hạn</td>
+                <td>Kì Hạn<a style="color: red;">(*)</a></td>
                     <td>
                         <input type="radio" name="kiHan" value="1 thang" required>1 tháng
                         <input type="radio" name="kiHan" value="3 thang">3 tháng
@@ -147,20 +147,20 @@ if(customerIDStr != null && customerIDStr.length()>0){
                     </td>
                 </tr>
                     <tr>    
-                <td>Trạng thái</td>
+                <td>Trạng thái<a style="color: red;">(*)</a></td>
                     <td>
                         <input type="radio" name="trangthai" value="chua duyet" required>Chưa duyệt
                         <input type="radio" name="trangthai" value="da duyet">Đã duyệt                        
                     </td>
                     </tr>
                 <tr>
-                    <td>Tiền vay</td>
+                    <td>Tiền vay<a style="color: red;">(*)</a></td>
                     <td>
                         <input type="number" min ="0"  name="tienvay" required>
                     </td>
                 </tr>
                 <tr>
-                    <td>Tờ khai ID</td>
+                    <td>Tờ khai ID<a style="color: red;">(*)</a></td>
                     <td>
                         <input type="text" name="tokhaiID" value="<%=tkID%>" style="background-color: grey;" readonly>
                     </td>
@@ -177,13 +177,13 @@ if(customerIDStr != null && customerIDStr.length()>0){
         <form name="capnhat" action="doUpdate.jsp" onsubmit="return check()" method="post">
             <table>
                 <tr>
-                    <td>ID</td>
+                    <td>ID<a style="color: red;">(*)</a></td>
                     <td>
                         <input value="<%=hdVay.get(0).getid() %>" type="text" name="ID" style="background-color: grey;" readonly>
                     </td>
                 </tr>
                 <tr>
-                    <td>Gói Vay</td>
+                    <td>Gói Vay<a style="color: red;">(*)</a></td>
                     <td>
                         <input type="radio" name="goivay" value="1" <%=hdVay.get(0).getGoivayID() == 1?"checked":""%>>Lãi suất dư nợ
                         <input type="radio" name="goivay" value="2" <%=hdVay.get(0).getGoivayID() == 2?"checked":""%>>Lãi suất cố định
@@ -191,19 +191,19 @@ if(customerIDStr != null && customerIDStr.length()>0){
                     </td>
                 </tr>
                 <tr>
-                    <td>User ID</td>
+                    <td>User ID<a style="color: red;">(*)</a></td>
                     <td>
                         <input value="<%=hdVay.get(0).getUserID() %>" type="text" name="userID" style="background-color: grey;" readonly>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <label for="ngayvay">Ngày Vay: </label>
+                    <label for="ngayvay">Ngày Vay: <a style="color: red;">(*)</a></label>
                     <input value="<%=hdVay.get(0).getNgayvay() %>" type="date" id="ngayvay" name="ngayvay">
                     
                 </tr>
                 <tr>
-                <td>Kì Hạn</td>
+                <td>Kì Hạn<a style="color: red;">(*)</a></td>
                     <td>
                         <input type="radio" name="kiHan" value="1 thang" <% if(hdVay.get(0).getkiHan().equalsIgnoreCase("1 thang")) { %> checked <% } %>>1 tháng
                         <input type="radio" name="kiHan" value="3 thang" <% if(hdVay.get(0).getkiHan().equalsIgnoreCase("3 thang")) { %> checked <% } %>>3 tháng
@@ -212,20 +212,20 @@ if(customerIDStr != null && customerIDStr.length()>0){
                     </td>
                 </tr>
                 <tr>
-                <td>Trạng thái</td>
+                <td>Trạng thái<a style="color: red;">(*)</a></td>
                     <td>
                         <input type="radio" name="trangthai" value="chua duyet" <% if(hdVay.get(0).getTrangthai().equalsIgnoreCase("chua duyet")) { %> checked <% } %>>Chưa duyệt
                         <input type="radio" name="trangthai" value="da duyet" <% if(hdVay.get(0).getTrangthai().equalsIgnoreCase("da duyet")) { %> checked <% } %>>Đã duyệt                        
                     </td>
                 </tr>
                 <tr>
-                    <td>Tiền vay</td>
+                    <td>Tiền vay<a style="color: red;">(*)</a></td>
                     <td>
                         <input value="<%=hdVay.get(0).getTienVay() %>" type="text" name="tienvay">
                     </td>
                 </tr>
                 <tr>
-                    <td>Tờ khai ID</td>
+                    <td>Tờ khai ID<a style="color: red;">(*)</a></td>
                     <td>
                         <input value="<%=hdVay.get(0).gettokhaiID() %>" type="text" name="tokhaiID" style="background-color: grey;" readonly>
                     </td>

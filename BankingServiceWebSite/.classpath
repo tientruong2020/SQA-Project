@@ -26,6 +26,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="E:/TaiLieuHocTap/SQA document/BankingServiceWebSite/WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-1.2.4.jar"/>
 	<classpathentry kind="lib" path="E:/TaiLieuHocTap/SQA document/BankingServiceWebSite/WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-api-1.2.1.jar"/>
 	<classpathentry kind="lib" path="E:/TaiLieuHocTap/SQA document/BankingServiceWebSite/WebContent/WEB-INF/lib/mysql-connector-java-8.0.16.jar"/>
@@ -36,5 +37,11 @@
 	<classpathentry kind="lib" path="E:/TaiLieuHocTap/SQA document/libs/guava-25.0-jre.jar"/>
 	<classpathentry kind="lib" path="E:/TaiLieuHocTap/SQA document/libs/okhttp-3.11.0.jar"/>
 	<classpathentry kind="lib" path="E:/TaiLieuHocTap/SQA document/libs/okio-1.14.0.jar"/>
+=======
+	<classpathentry kind="lib" path="E:/Hoc Online/Software Quality Assurance/SQA/BankingServiceWebSite/WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-1.2.4.jar"/>
+	<classpathentry kind="lib" path="E:/Hoc Online/Software Quality Assurance/SQA/BankingServiceWebSite/WebContent/WEB-INF/lib/javax.servlet.jsp.jstl-api-1.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/Hoc Online/Software Quality Assurance/SQA/BankingServiceWebSite/WebContent/WEB-INF/lib/mysql-connector-java-8.0.16.jar"/>
+	<classpathentry kind="lib" path="E:/Hoc Online/Software Quality Assurance/servlet.jar"/>
+>>>>>>> cb51978194e1411407faf43561d0ff8fa9dc2da3
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
