@@ -83,8 +83,6 @@ if(listUser.size() != 0){
 		Users u = listUser.get(0);
 %>
 	<table>
-		<thead>
-		</thead>
 		<tbody>
 			<tr>
 				<td>Họ và tên: </td>
@@ -117,7 +115,6 @@ if(listUser.size() != 0){
 		<thead>
 			<tr>
 				<th colspan="4">Các khoản vay</th>
-				<th  rowspan="2" style="width: 20%">Thao tác</th>
 			</tr>
 			<tr style="text-align: center">
 				<td>ID</td>
@@ -146,7 +143,9 @@ if(listUser.size() != 0){
 				<td style="text-align: center"><%=hdv.getGoiVay().getTenGoi() %></td>
 				<td style="text-align: center">
 					<button onclick="location.href='themPhieuNop.jsp?hdvid=<%=hdv.getID()%>&userid=<%=userid%>&cusname=<%=cusName%>';">Trả tiền</button>
-					<button onclick="location.href='laiVay.jsp?hdvid=<%=hdv.getID()%>&userid=<%=userid%>&cusname=<%=cusName%>';">Tính lãi vay</button>
+				</td>
+				<td style="text-align: center">
+					<button id="tinh_lai_vay" onclick="location.href='laiVay.jsp?hdvid=<%=hdv.getID()%>&userid=<%=userid%>&cusname=<%=cusName%>';">Tính lãi vay</button>
 				</td>
 			</tr>
 			<%} %>

@@ -1,7 +1,7 @@
 <%@page import="com.banking.dao.UsersDAO"%>
 <%@page import="com.banking.entity.Users"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <%
 session.removeAttribute("username");
 	String username = (String) request.getParameter("username");

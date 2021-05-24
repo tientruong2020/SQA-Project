@@ -66,7 +66,7 @@ button:hover {
 	<div style='display: flex; justify-content: center; align-items: center; flex-direction: column'>
 		<h2>Ngân hàng 4T</h2>
 		<h2>Vui lòng đăng nhập:</h2>
-		<a href="frontend/login.jsp"><Button>Đăng nhập</Button></a>
+		<a href="frontend/login.jsp" id="log_in_button"><Button>Đăng nhập</Button></a>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

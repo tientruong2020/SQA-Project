@@ -9,7 +9,7 @@
 		</div>
 		<div style='display: block'>
 			<a>Wellcome!! <%= username %></a>
-			<button onclick="location.href='../';">Đăng xuất</button>
+			<button id="log_out_button" onclick="location.href='../';">Đăng xuất</button>
 		</div>
 	</div>
 </div>

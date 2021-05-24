@@ -53,13 +53,9 @@ button:hover {
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div align="center" style='margin-top: 50px'>
-<<<<<<< HEAD
-		<h2><a href="searchUserForKhaiBao.jsp"><button>Vay lãi</button></a></h2>
-=======
-		<h2><a href="xemHD.jsp"><button>Vay lãi</button></a></h2>
->>>>>>> cb51978194e1411407faf43561d0ff8fa9dc2da3
+		<h2><a href="searchUser.jsp"><button>Vay lãi</button></a></h2>
 		<h2><a href="searchUser.jsp"><button>Trả tiền</button></a></h2>
-		<h2><a href="searchUser.jsp"><button>Tính lãi</button></a></h2>
+		<h2><a id="tinh_lai_button" href="searchUser.jsp"><button>Tính lãi</button></a></h2>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

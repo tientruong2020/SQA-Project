@@ -106,7 +106,7 @@ if(customerIDStr != null && customerIDStr.length()>0){
 
 %>
 	<div style='margin-top: 20px; margin-bottom: 20px'>
-		<button onclick="location.href='userInfoForKhaiBao.jsp?name=<%=cusName%>';">Quay lại</button>
+		<button onclick="location.href='userInfo.jsp?name=<%=cusName%>';">Quay lại</button>
 	</div>
 
 <a href="./KhaiBao.jsp?customerid=<%=customerIDStr %>&cusname=<%=cusName%>"><button>Thêm mới</button></a>

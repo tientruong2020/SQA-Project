@@ -21,12 +21,6 @@ input.specific:hover {
 }
 </style>
 </head>
-<%	if(request.getParameter("mess") !=null && request.getParameter("mess").equalsIgnoreCase("fail")){
-          %><script>
-          	window.alert("Sai Username hoặc Mật khẩu vui lòng đăng nhập lại!!!");
-          </script><%
-      } 
-      %>
 <body>
 		<div align="center">
 				<h2>Vui lòng đăng nhập:</h2>
@@ -43,8 +37,8 @@ input.specific:hover {
 		            
 		            <tr>
 		                <td></td>
-		                <td><input id="dologin" type="submit" value="Đăng nhập" disabled="true" class="specific"/>
-		                <input type="button" onclick="backToHome()"  id="backtohome" value="Huỷ bỏ" class="specific"/>
+		                <td><button id="dologin" type="submit" value="Đăng nhập" class="specific">Đăng nhập</button>
+		                <button type="button" onclick="backToHome()"  id="backtohome" value="Huỷ bỏ" class="specific">Huỷ bỏ</button>
 		                </td>
 		            </tr>
 		        </table>

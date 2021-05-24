@@ -12,6 +12,10 @@ import com.banking.dao.PhieuNopTienDAO;
 import com.banking.entity.HopDongVay;
 import com.banking.entity.PhieuNopTien;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
 class TestPNopTienDAO extends DAO{
 
 	@Test
@@ -39,7 +43,6 @@ class TestPNopTienDAO extends DAO{
 		} finally {
 			// TODO: handle finally clause
 			connection.rollback();
-			connection.close();
 		}
 	}
 
@@ -68,7 +71,6 @@ class TestPNopTienDAO extends DAO{
 		} finally {
 			// TODO: handle finally clause
 			connection.rollback();
-			connection.close();
 		}
 	}
 
@@ -97,7 +99,6 @@ class TestPNopTienDAO extends DAO{
 		} finally {
 			// TODO: handle finally clause
 			connection.rollback();
-			connection.close();
 		}
 	}
 
@@ -126,7 +127,6 @@ class TestPNopTienDAO extends DAO{
 		} finally {
 			// TODO: handle finally clause
 			connection.rollback();
-			connection.close();
 		}
 	}
 

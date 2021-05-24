@@ -45,7 +45,7 @@
 		</form>
 	</table>
         
-        <h2>Danh sách hợp đồng vay</h2>
+        <h1>Danh sách hợp đồng vay</h1>
             <table border="1px solid black">
                 <tr>
                     <th>ID</th>
@@ -72,12 +72,12 @@
 					
                                         <td>                        
                                             <%  if(u.getTrangthai().equalsIgnoreCase("da duyet") ) { %>
-                                            <button disabled="true" onclick="location.href='update.jsp?id=<%=u.getid()%>';">Cập nhật</button>
-                                            <button disabled="true" onclick="showMess(<%=u.getid()%>)">Xóa</button> 
+                                            <button disabled="true" onclick="location.href='update.jsp?id=<%=u.getid()%>';">Update</button>
+                                            <button disabled="true" onclick="showMess(<%=u.getid()%>)">Delete</button> 
                                            <% }
                                              else { %>
-                                            <button onclick="location.href='update.jsp?id=<%=u.getid()%>';">Cập nhật</button>
-                                            <button onclick="showMess(<%=u.getid()%>)">Xóa</button> 
+                                            <button onclick="location.href='update.jsp?id=<%=u.getid()%>';">Update</button>
+                                            <button onclick="showMess(<%=u.getid()%>)">Delete</button> 
                                             <%}
                                                  %>              
                                         </td>

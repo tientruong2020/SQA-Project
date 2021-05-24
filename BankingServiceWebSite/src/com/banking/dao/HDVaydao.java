@@ -50,29 +50,27 @@ public class HDVaydao extends DAO{
     
 
     
-    public ArrayList<HDVay> getHDVaybyID(String id){
-        ArrayList<HDVay> kq =new ArrayList<HDVay>();
+    public HDVay getHDVaybyID(String id){
+        
         String sql = "SELECT * FROM sqa.hopdongvay where ID = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);  
             ps.setString(1, id);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-            	
-            	HDVay a= new HDVay();
-            	a.setid(rs.getInt("ID"));
-            	a.setGoivayID(rs.getInt("goivayID"));
-            	a.setUserID(rs.getInt("userID"));
-            	a.setNgayvay(rs.getDate("Ngayvay"));
-            	a.setkiHan(rs.getString("kiHan"));
-            	a.setTrangthai(rs.getString("Trangthai"));
-            	a.setTienVay(rs.getFloat("TienVay"));
-            	a.settokhaiID(rs.getInt("tokhaiID"));
-                kq.add(a);
+                return new HDVay(rs.getInt(1), 
+                        rs.getInt(2), 
+                        rs.getInt(3), 
+                        rs.getDate(4), 
+                        rs.getString(5), 
+                        rs.getString(6), 
+                        rs.getFloat(7),
+                rs.getInt(8));
+                
             }
         } catch (SQLException e) {
         }
-        return kq;
+        return null;
     }
     
 
@@ -94,19 +92,15 @@ public class HDVaydao extends DAO{
         }
     }
     
-    public static boolean xoa(int id){
-    	boolean kq = false;
+    public void xoa(String id){
         String sql = "DELETE FROM `sqa`.`hopdongvay`WHERE `ID` = ?;";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setInt(1, id);
-            int de = ps.executeUpdate();
-            if(de != 0)
-            kq = true;
+            ps.setString(1, id);
+            ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();            
         }        
-        return kq;
     }   
 
     public void them(int hgoivayid, int huserid, Date hngayvay, String hkihan, String htrangthai, float htienvay, int htokhaiid) {

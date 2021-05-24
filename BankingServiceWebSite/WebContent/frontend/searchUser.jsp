@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
-<title>Tim kiem khach hang</title>
+<title>Tìm kiếm khách hàng</title>
 <style>
 	table, th, td {
 	  border: 1px solid black;
@@ -52,6 +52,9 @@ button:hover {
 	<div style='margin-top: 20px'>
 		<a href="main.jsp"><button>Quay lại</button></a>
 	</div>
+	<div style='margin-top: 20px'>
+		<a href="addCustomer.jsp"><button>Thêm khách hàng</button></a>
+	</div>
 	<h2>Tìm kiếm khách hàng</h2>
 	<table>
 		<form action="userInfo.jsp" method="POST" >
@@ -59,14 +62,8 @@ button:hover {
 				<td style="padding: 15px">Nhập tên khách hàng:</td>
 				<td style="padding: 15px"><input type="text" required id ="name" name ="name"  autofocus/> <a style="color: red;">(*)</a></td>
 			</tr>
-			<!--
 			<tr>
-				<td>Nhập số CCCD:</td>
-				<td><input type="text" required id ="cccd" name ="cccd"  autofocus/></td>
-			</tr>
-			-->
-			<tr>
-				<td style="text-align: right" colspan="2"><button type = "submit" style="width: 100%">Tìm khách hàng</button></td>
+				<td style="text-align: right" colspan="2"><button id="tim_kiem_khach_hang" type = "submit" style="width: 100%">Tìm khách hàng</button></td>
 			</tr>
 		</form>
 	</table>

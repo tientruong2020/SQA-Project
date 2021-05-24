@@ -1,9 +1,9 @@
-package test.selenium;
+package com.banking.test_selenium;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestDriver {
-	private String driverUrl = "E:\\TaiLieuHocTap\\SQA document\\chromedriver.exe";
+	private String driverUrl = "C:\\Users\\Thinh_Me\\Downloads\\chromedriver_win32\\chromedriver.exe";
 
 	public TestDriver() {
 	}

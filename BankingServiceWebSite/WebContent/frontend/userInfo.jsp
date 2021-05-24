@@ -94,9 +94,10 @@ button:hover {
 			%>
 				<tr>
 					<td style="text-align: center"><%=i+1 %></td>
-					<td><%=u.getFullName() %></td>
+					<td id="full_name_khach_hang"><%=u.getFullName() %></td>
 					<td><%=u.getEmail() %></td>
-					<td><button onclick="location.href='chonKhoanVay.jsp?userid=<%=u.getUserId()%>&cusname=<%=name%>';">Xem các khoản vay</button></td>
+					<td><button id="xem_cac_khoan_vay" onclick="location.href='chonKhoanVay.jsp?userid=<%=u.getUserId()%>&cusname=<%=name%>';">Xem các khoản vay</button></td>
+					<td><a href="DSKhaiBao.jsp?customerid=<%=u.getUserId()%>&cusname=<%=name%>"><button>Khai báo Thông tin vay</button></a></td>
 				</tr>
 			<%} %>
 		</tbody>
